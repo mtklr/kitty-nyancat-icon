@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# usage: png2icns icon.png
+
+# "strict mode"
+set -eu -o pipefail
+
+readonly me=${0##*/}
+
+die () {
+	echo "$me: $1" >&2
+	exit 1
+}
+
+# use a 1024x1024 png. iconutil (below) will set dpi to 72/144
+f="${1:-}"
+
+[ -n "$f" ] || die "usage: $me icon.png"
+[ -r "$f" ] || die "$f: No such file or directory"
+[ "${f##*.}" = "png" ] || die "$f: No .png extension - not a PNG file?"
+
+# must have .iconset extension
+icond="${f/.png/.iconset}"
+
+mkdir -p "$icond"
+
+[ -d "$icond" ] || die "$icond: No such file or directory"
+
+pngf="icon_512x512@2x.png"
+
+sips -z 1024 1024 "$f" --out "$icond/$pngf"
+
+# error check here before continuing
+[ -r "$icond/$pngf" ] || die "Initial image not created, someething went wrong"
+
+sips -z 512 512 "$icond/$pngf" --out "$icond/icon_512x512.png"
+sips -z 512 512 "$icond/$pngf" --out "$icond/icon_256x256@2x.png"
+sips -z 256 256 "$icond/$pngf" --out "$icond/icon_256x256.png"
+sips -z 256 256 "$icond/$pngf" --out "$icond/icon_128x128@2x.png"
+sips -z 128 128 "$icond/$pngf" --out "$icond/icon_128x128.png"
+sips -z  64  64 "$icond/$pngf" --out "$icond/icon_64x64.png"
+sips -z  32  32 "$icond/$pngf" --out "$icond/icon_32x32.png"
+sips -z  32  32 "$icond/$pngf" --out "$icond/icon_16x16@2x.png"
+sips -z  16  16 "$icond/$pngf" --out "$icond/icon_16x16.png"
+
+iconutil -c icns "$icond"
+
+# rm -rf "$icond"
+
+exit
