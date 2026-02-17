@@ -6,11 +6,14 @@ Seemed like a sensible thing to do.
 
 ## examples
 
-<img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app.png" width="256" alt="nyancat icon, angled cat, stars, prompt, blue window"> <img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app2.png" width="256" alt="nyancat icon, angled cat, stars, prompt, flat blue window, flat gray border">
+<img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app.png" width="256" alt="terminal icon with nyancat"><img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app2.png" width="256" alt="terminal icon with nyancat">
 <br>
-<img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app3.png" width="256" alt="nyancat icon, straight cat, prompt, stars, blue window, gray border"> <img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app4.png" width="256" alt="nyancat icon, straight cat, no prompt, no stars, flat blue window">
+<img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app3.png" width="256" alt="terminal icon with nyancat"><img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app4.png" width="256" alt="terminal icon with nyancat">
+<br>
+<img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app5.png" width="256" alt="terminal icon with nyancat"><img src="https://github.com/mtklr/kitty-nyancat-icon/blob/main/kitty.app6.png" width="256" alt="terminal icon with nyancat">
 
 * Various combinations of icon color, background, etc. are in the SVG as layers. Enable the layers you want (in [Inkscape](https://inkscape.org/) for example) and export as a PNG.
+
 
 ## create .icns
 
